@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hyunjiin-user-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/your-org/hyunjiin-server.git
+    targetRevision: main
+    path: apps/hyunjiin-user-api/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hyunjiin
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

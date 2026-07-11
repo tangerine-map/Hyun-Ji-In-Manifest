@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hyunjiin-user-api
+  namespace: hyunjiin
+spec:
+  rules:
+    - host: api.hyunjiin.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hyunjiin-user-api
+                port:
+                  name: http

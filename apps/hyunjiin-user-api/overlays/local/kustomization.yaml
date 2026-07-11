@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: hyunjiin
+resources:
+  - ../../base
+  - secret.local.yaml
+images:
+  - name: ghcr.io/your-org/hyunjiin-user-api
+    newName: hyunjiin-user-api
+    newTag: local
