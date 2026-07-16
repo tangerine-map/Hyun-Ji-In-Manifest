@@ -5,4 +5,4 @@ metadata:
   namespace: hyunjiin
 data:
   SPRING_PROFILES_ACTIVE: prod
-  SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+  SPRING_JPA_HIBERNATE_DDL_AUTO: update
