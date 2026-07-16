@@ -5,6 +5,6 @@ resources:
   - ../../base
   - secret.local.yaml
 images:
-  - name: ghcr.io/your-org/hyunjiin-user-api
+  - name: ghcr.io/tangerine-map/hyunjiin-user-api
     newName: hyunjiin-user-api
     newTag: local

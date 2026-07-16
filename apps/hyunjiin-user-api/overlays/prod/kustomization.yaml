@@ -6,6 +6,6 @@ resources:
 patches:
   - path: patch-ingress-host.yaml
 images:
-  - name: ghcr.io/your-org/hyunjiin-user-api
-    newName: ghcr.io/your-org/hyunjiin-user-api
+  - name: ghcr.io/tangerine-map/hyunjiin-user-api
+    newName: ghcr.io/tangerine-map/hyunjiin-user-api
     newTag: latest

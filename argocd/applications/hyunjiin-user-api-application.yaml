@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/your-org/hyunjiin-server.git
+    repoURL: https://github.com/tangerine-map/Hyun-Ji-In-Manifest.git
     targetRevision: main
     path: apps/hyunjiin-user-api/overlays/prod
   destination:
