@@ -5,7 +5,7 @@ metadata:
   namespace: hyunjiin
 spec:
   rules:
-    - host: api.hyunjiin.example.com
+    - host: hyunjiin.site
       http:
         paths:
           - path: /
