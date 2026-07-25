@@ -6,3 +6,4 @@ metadata:
 data:
   SPRING_PROFILES_ACTIVE: prod
   SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  OPENAPI_SERVER_URL: https://hyunjiin.site
