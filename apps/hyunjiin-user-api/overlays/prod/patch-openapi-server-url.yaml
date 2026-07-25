@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hyunjiin-user-api
+  namespace: hyunjiin
+spec:
+  template:
+    spec:
+      containers:
+        - name: user-api
+          env:
+            - name: OPENAPI_SERVER_URL
+              value: https://hyunjiin.site
