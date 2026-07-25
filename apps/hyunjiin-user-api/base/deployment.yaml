@@ -41,6 +41,18 @@ spec:
                 secretKeyRef:
                   name: hyunjiin-user-api-secret
                   key: spring-datasource-password
+            - name: TOUR_API_SERVICE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: hyunjiin-user-api-secret
+                  key: tour-api-service-key
+                  optional: true
+            - name: TOUR_API_SYNC_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: hyunjiin-user-api-secret
+                  key: tour-api-sync-api-key
+                  optional: true
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
