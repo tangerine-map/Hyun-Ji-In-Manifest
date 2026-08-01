@@ -10,4 +10,4 @@ patches:
 images:
   - name: ghcr.io/tangerine-map/hyunjiin-user-api
     newName: ghcr.io/tangerine-map/hyunjiin-user-api
-    newTag: 3a9318f
+    newTag: b21a997
