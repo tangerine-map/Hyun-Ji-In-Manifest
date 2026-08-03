@@ -6,3 +6,4 @@ metadata:
 data:
   SPRING_PROFILES_ACTIVE: prod
   SPRING_JPA_HIBERNATE_DDL_AUTO: update
+  RESTAURANT_ENRICHMENT_CRAWLER_BASE_URL: http://hyunjiin-crawler:8000

@@ -5,4 +5,9 @@ resources:
   - configmap.yaml
   - deployment.yaml
   - service.yaml
+  - crawler-deployment.yaml
+  - crawler-service.yaml
+  - ollama-pvc.yaml
+  - ollama-deployment.yaml
+  - ollama-service.yaml
   - ingress.yaml

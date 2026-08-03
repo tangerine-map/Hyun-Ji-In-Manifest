@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hyunjiin-crawler
+  namespace: hyunjiin
+  labels:
+    app: hyunjiin-crawler
+spec:
+  type: ClusterIP
+  selector:
+    app: hyunjiin-crawler
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http

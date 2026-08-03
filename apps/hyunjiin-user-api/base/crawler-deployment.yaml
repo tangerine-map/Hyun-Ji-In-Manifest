@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hyunjiin-crawler
+  namespace: hyunjiin
+  labels:
+    app: hyunjiin-crawler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hyunjiin-crawler
+  template:
+    metadata:
+      labels:
+        app: hyunjiin-crawler
+    spec:
+      containers:
+        - name: crawler
+          image: ghcr.io/tangerine-map/hyunjiin-crawler:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            - name: OLLAMA_BASE_URL
+              value: http://ollama:11434
+            - name: OLLAMA_MODEL
+              value: qwen3.5:4b
+            - name: CRAWLER_PARALLELISM
+              value: "3"
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 20
+            timeoutSeconds: 3
+            failureThreshold: 3
+          resources:
+            requests:
+              cpu: 250m
+              memory: 512Mi
+            limits:
+              cpu: "2"
+              memory: 2Gi
+          volumeMounts:
+            - name: shared-memory
+              mountPath: /dev/shm
+      volumes:
+        - name: shared-memory
+          emptyDir:
+            medium: Memory
+            sizeLimit: 1Gi
